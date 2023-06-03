@@ -72,9 +72,66 @@ export const AppProvider = ({ children }) => {
       setError("error while creating account, please reload");
     }
   };
+
+  const addFriends = async ({name, accountAddress}) => {
+    try {
+      if(name || accountAddress) return setError("name and account must be there");
+      const contract = await connectingWithContract();
+
+      const addMyFriend =await contract.addFriend(accountAddress, name);
+      setLoading(true);
+      await addMyFriend.wait();
+      setLoading(false);
+      router.push("/");
+      window.location.reload();
+
+    } catch (error) {
+      setError("error while creating account, please reload");
+    }
+  };
+
+  const sendMessage = async ({msg, address}) => {
+    try {
+      if(msg ||address) return setError("name and account must be there");
+      const contract = await connectingWithContract();
+
+      const addMessage =await contract.sendMessage({address, msg});
+      setLoading(true);
+      await addMessage.wait();
+      setLoading(false);
+      //router.push("/");
+      window.location.reload();
+
+    } catch (error) {
+      setError("error while creating account, please reload");
+    }
+  };
+
+  const readUser = async (userAddress) => {
+      const contract= await connectingWithContract();
+      const userName = await contract.getUsername(userAddress);
+      setCurrentUserName(userName);
+      setCurrentUserAddress(userAddress);
+  };
     //const title= "Hey Welcome to Blockchain Chat App";
   return (
-    <AppContext.Provider value={{readMessage, createAccount}}>
+    <AppContext.Provider value={{
+      readMessage, 
+      createAccount, 
+      addFriends, 
+      sendMessage, 
+      readUser,
+      account,
+      userName,
+      friendLists,
+      friendMsg,
+      loading,
+      userLists,
+      error,
+      currentUserName,
+      currentUserAddress
+      
+      }}>
         {children}
 
     </AppContext.Provider>
