@@ -1,10 +1,10 @@
 import Navbar from './Navbar/navbar';
-import userCard from './UserCard/userCard';
-import model from './Model/model';
-import loader from'./Loader/loader';
-import friend from './Friend/friend';
-import filter from './Filter/filter';
-import error from './Error/error';
+import UserCard from './UserCard/userCard';
+import Model from './Model/model';
+import Loader from'./Loader/loader';
+import Friend from './Friend/friend';
+import Filter from './Filter/filter';
+import Error from './Error/error';
 
 
-export { Navbar, userCard, model, loader, friend, filter, error};
+export { Navbar, UserCard, Model, Loader, Friend, Filter, Error};

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import Style from "./navbar.module.css";
 import { AppContext } from '../../context/AppContext';
-import { model, error } from '../index';
+import { Model, Error } from '../index';
 
 import images from "../../assets";
 
@@ -35,7 +35,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openModel, setOpenModel]= useState(false);
 
-  const { account, userName, connectWallet}= useContext(AppContext);
+  const { account, userName, connectWallet, createAccount, error}= useContext(AppContext);
   return (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
@@ -105,6 +105,24 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* {Model component} */}
+      {openModel && (
+        <div className={Style.modelBox}>
+          <Model openModel={setOpenModel}
+                title="WELCOME TO"
+                head ="CHAT BUDDY"
+                info="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Asperiores atque, dolorem laudantium dolor sequi necessitatibus 
+                cum voluptatum incidunt nostrum nemo iusto, odio recusandae. 
+                Repellendus, id aperiam? Perspiciatis quia mollitia similique!"
+                smallInfo="kindley select your name"
+                images={images.hero}
+                functionName={createAccount}
+          /> 
+          
+        </div>
+      )}
+      {error == "" ? "" : <Error error={error} />}
     </div>
   );
 };
