@@ -121,6 +121,8 @@ export const AppProvider = ({ children }) => {
       addFriends, 
       sendMessage, 
       readUser,
+      connectWallet,
+      CheckIfWalletConnected,
       account,
       userName,
       friendLists,

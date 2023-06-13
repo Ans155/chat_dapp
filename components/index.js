@@ -1,4 +1,4 @@
-import navbar from './Navbar/navbar';
+import Navbar from './Navbar/navbar';
 import userCard from './UserCard/userCard';
 import model from './Model/model';
 import loader from'./Loader/loader';
@@ -7,4 +7,4 @@ import filter from './Filter/filter';
 import error from './Error/error';
 
 
-export { navbar, userCard, model, loader, friend, filter, error};
+export { Navbar, userCard, model, loader, friend, filter, error};

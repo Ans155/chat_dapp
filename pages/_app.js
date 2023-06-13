@@ -2,12 +2,12 @@
 import React from 'react'
 
 import { AppProvider } from '../context/AppContext';
-import { navbar } from '../components/index';
+import { Navbar } from '../components/index';
 const MyApp = ({ Component, pageProps}) => (
   
     <div>
       <AppProvider >
-        <navbar />
+        <Navbar />
       <Component {...pageProps} />
       </AppProvider>
         
