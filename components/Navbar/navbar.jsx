@@ -108,7 +108,7 @@ const Navbar = () => {
       {/* {Model component} */}
       {openModel && (
         <div className={Style.modelBox}>
-          <Model openModel={setOpenModel}
+          <Model openBox={setOpenModel}
                 title="WELCOME TO"
                 head ="CHAT BUDDY"
                 info="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -116,8 +116,9 @@ const Navbar = () => {
                 cum voluptatum incidunt nostrum nemo iusto, odio recusandae. 
                 Repellendus, id aperiam? Perspiciatis quia mollitia similique!"
                 smallInfo="kindley select your name"
-                images={images.hero}
+                image={images.hero}
                 functionName={createAccount}
+                address={account}
           /> 
           
         </div>
