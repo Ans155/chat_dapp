@@ -37,9 +37,10 @@ export const AppProvider = ({ children }) => {
       setFriendLists(friendLists);
 
       const userList = await contract.getAllAppUser();
-      setUserLists(userLists);
+      setUserLists(userList);
     } catch (error) {
       setError("Please Install and connect your wallet");
+      console.log(error);
     }
   };
   useEffect(() => {

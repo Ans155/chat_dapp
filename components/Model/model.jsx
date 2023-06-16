@@ -24,7 +24,11 @@ const model = ({openBox, title, head, info, smallInfo, image, functionName, addr
           </h1>
           <p>{info}</p>
           <small>{smallInfo}</small>
-          <div className={Style.Model_box_right_name}>
+          {
+            loading == true ?(
+              <Loader />
+            ) : (
+              <div className={Style.Model_box_right_name}>
             <div className={Style.Model_box_right_name_info}>
               <Image src={images.username} alt="user" width={30} height={30} />
               <input type="text" placeholder="your name" onChange={(e) => setName(e.target.value)}/>
@@ -48,7 +52,10 @@ const model = ({openBox, title, head, info, smallInfo, image, functionName, addr
                 Cancel
               </button>
             </div>
-          </div>
+              </div>
+            )
+          }
+          
         </div>
       </div>   
     </div>
