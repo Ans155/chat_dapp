@@ -14,10 +14,10 @@ export const AppProvider = ({ children }) => {
 
   const [account, setAccount] = useState("");
   const [userName, setUserName] = useState("");
-  const [friendLists, setFriendLists] = useState("");
-  const [friendMsg, setFriendMsg] = useState("");
-  const [loading, setLoading] = useState("");
-  const [userLists, setUserLists] = useState("");
+  const [friendLists, setFriendLists] = useState([]);
+  const [friendMsg, setFriendMsg] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [userLists, setUserLists] = useState([]);
   const [error, setError] = useState("");
 
 
@@ -33,6 +33,7 @@ export const AppProvider = ({ children }) => {
       setAccount(connectAccount);
       const userName= await contract.getUsername(connectAccount);
       setUserName(userName);
+      console.log(userName);
       const friendLists= await contract.getMyFriendList();
       setFriendLists(friendLists);
 
@@ -60,7 +61,7 @@ export const AppProvider = ({ children }) => {
 
   const createAccount = async ({name, accountAddress}) => {
     try {
-      if(name || accountAddress) return setError("name and account must be there");
+      //if(name || accountAddress) return setError("name and account must be there");
       const contract = await connectingWithContract();
 
       const getCreatedUser=await contract.createAccount(name);
@@ -71,6 +72,7 @@ export const AppProvider = ({ children }) => {
 
     } catch (error) {
       setError("error while creating account, please reload");
+      console.log(error);
     }
   };
 

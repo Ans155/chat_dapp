@@ -37,7 +37,7 @@ const Navbar = () => {
 
   const { account, userName, connectWallet, createAccount, error}= useContext(AppContext);
   return (
-    <div className={Style.NavBar}>
+    <div className={Style.NavBar}> 
       <div className={Style.NavBar_box}>
         <div className={Style.NavBar_box_left}>
           <Image src={images.logo} alt ="logo" width={50} height={50} />
@@ -115,7 +115,7 @@ const Navbar = () => {
                 Asperiores atque, dolorem laudantium dolor sequi necessitatibus 
                 cum voluptatum incidunt nostrum nemo iusto, odio recusandae. 
                 Repellendus, id aperiam? Perspiciatis quia mollitia similique!"
-                smallInfo="kindley select your name"
+                smallInfo="kindly select your name..."
                 image={images.hero}
                 functionName={createAccount}
                 address={account}

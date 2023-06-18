@@ -6,7 +6,7 @@ import { AppContext } from '../../context/AppContext';
 import images from "../../assets";
 import { Loader } from '../../components/index';
 
-const model = ({openBox, title, head, info, smallInfo, image, functionName, address}) => {
+const Model = ({openBox, title, head, info, smallInfo, image, functionName, address}) => {
 
   const [name, setName] = useState("");
   const [accountAddress, setAccountAddress] = useState("");
@@ -62,4 +62,4 @@ const model = ({openBox, title, head, info, smallInfo, image, functionName, addr
   )
 }
 
-export default model
+export default Model

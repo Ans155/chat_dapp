@@ -13,6 +13,7 @@ export const CheckIfWalletConnected = async() => {
         const firstAccount = accounts[0];
         return firstAccount;
     } catch (error) {
+        //console.log("bhen ki chut");
         console.log(error);
         
     }
