@@ -33,7 +33,7 @@ export const AppProvider = ({ children }) => {
       setAccount(connectAccount);
       const userName= await contract.getUsername(connectAccount);
       setUserName(userName);
-      console.log(userName);
+      // console.log(userName);
       const friendLists= await contract.getMyFriendList();
       setFriendLists(friendLists);
 
