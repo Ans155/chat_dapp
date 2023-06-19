@@ -4,7 +4,7 @@ import { AppContext } from '../context/AppContext';
 const chatApp = () => {
     const {}= useContext(AppContext);
   return (
-    <div>chatApp</div>
+    <div></div>
   )
 }
 

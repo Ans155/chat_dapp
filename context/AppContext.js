@@ -78,7 +78,7 @@ export const AppProvider = ({ children }) => {
 
   const addFriends = async ({name, accountAddress}) => {
     try {
-      if(name || accountAddress) return setError("name and account must be there");
+      //if(name || accountAddress) return setError("name and account must be there");
       const contract = await connectingWithContract();
 
       const addMyFriend =await contract.addFriend(accountAddress, name);
