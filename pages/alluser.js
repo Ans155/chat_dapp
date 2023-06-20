@@ -13,7 +13,7 @@ const alluser = () => {
         <div>
             <div className={Style.alluser_info}>
                 <h1>
-                    find your friends
+                    Find Your Friends :
                 </h1>
 
             </div>
