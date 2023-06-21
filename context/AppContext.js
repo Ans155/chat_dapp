@@ -40,7 +40,7 @@ export const AppProvider = ({ children }) => {
       const userList = await contract.getAllAppUser();
       setUserLists(userList);
     } catch (error) {
-      setError("Please Install and connect your wallet");
+      //setError("Please Install and connect your wallet");
       console.log(error);
     }
   };
