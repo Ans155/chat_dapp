@@ -9,7 +9,7 @@ import Card from './Card/Card';
 
 import { AppContext } from '../../context/AppContext';
 
-const friend = () => {
+const Friend = () => {
   
   const {sendMessage, account, friendLists, readMessage, userName, loading, currentUserName, currentUserAddress, readUser, friendMsg} = useContext(AppContext);
   console.log(friendLists);
@@ -30,7 +30,7 @@ const friend = () => {
           }
         </div>
         <div className={Style.Friend_box_right}>
-          <Chat
+          {/* <Chat
             functionName={sendMessage}
             readMessage={readMessage}
             friendMsg={friendMsg}
@@ -40,7 +40,7 @@ const friend = () => {
             currentUserName={currentUserName}
             currentUserAddress={currentUserAddress}
 
-           />
+           /> */}
         </div>
       </div>
 
@@ -48,4 +48,4 @@ const friend = () => {
   )
 }
 
-export default friend
+export default Friend
