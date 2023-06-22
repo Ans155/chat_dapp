@@ -55,7 +55,7 @@ export const AppProvider = ({ children }) => {
       const read = await contract.readMessage(friendAddress);
       setFriendMsg(read);
     } catch (error) {
-      setError("NO message right now");
+      //setError("NO message right now");
     }
   };
 
