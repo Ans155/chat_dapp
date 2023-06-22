@@ -30,7 +30,7 @@ const Friend = () => {
           }
         </div>
         <div className={Style.Friend_box_right}>
-          {/* <Chat
+          <Chat
             functionName={sendMessage}
             readMessage={readMessage}
             friendMsg={friendMsg}
@@ -40,7 +40,7 @@ const Friend = () => {
             currentUserName={currentUserName}
             currentUserAddress={currentUserAddress}
 
-           /> */}
+           />
         </div>
       </div>
 
