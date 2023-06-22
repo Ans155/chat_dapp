@@ -31,7 +31,7 @@ const Friend = () => {
         </div>
         <div className={Style.Friend_box_right}>
           <Chat
-            functionName={sendMessage}
+            sendMessage={sendMessage}
             readMessage={readMessage}
             friendMsg={friendMsg}
             account={account}

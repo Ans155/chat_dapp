@@ -7,7 +7,7 @@ import images from "../../../assets";
 import { convertTime } from '../../../utils/apiFeature';
 import { Loader } from '../../index';
 import { useRouter } from 'next/router';
-const Chat = ({functionName, readMessage, friendMsg, account, userName, Loading, currentUserName, currentUserAddress}) => {
+const Chat = ({sendMessage, readMessage, friendMsg, account, userName, Loading, currentUserName, currentUserAddress}) => {
 
     const [message, setMessage] = useState('');
     const [chatData, setChatData] = useState({name:"", address:""});
@@ -72,16 +72,14 @@ const Chat = ({functionName, readMessage, friendMsg, account, userName, Loading,
             {currentUserName && currentUserAddress ?(
                 <div className={Style.Chat_box_send}>
                     <div className={Style.Chat_box_send_img}>
-                        <Image src={images.smile} alt='smile' width={50} height={50}/>
+                        <Image src={images.smile} alt='smile' width={30} height={30}/>
                         <input type='text' placeholder='send your message' onChange={(e)=> setMessage(e.target.value)} />
-                        <Image src={images.file} alt="file" width={50} height={50} />
-                        {
-                            Loading==true ? (
-                                <Loader />
-                            ) : (
-                                <Image src={images.send} alt="file" width={50} height={50} onClick={() => functionName({msg:message, address:chatData})}/>
-                            )
-                        }
+                        <Image src={images.file} alt="file" width={30} height={30} />
+                                <>
+                                <small>{message} {chatData.address}</small>
+                                <Image src={images.send} alt="send" width={30} height={30} onClick={() => sendMessage({ msg: message, address: chatData.address})}/>
+                                </>
+
                     </div>
                 </div>
 

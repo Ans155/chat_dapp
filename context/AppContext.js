@@ -95,10 +95,11 @@ export const AppProvider = ({ children }) => {
 
   const sendMessage = async ({msg, address}) => {
     try {
-      if(msg ||address) return setError("name and account must be there");
+      console.log(msg);
+      console.log(address);
       const contract = await connectingWithContract();
 
-      const addMessage =await contract.sendMessage({address, msg});
+      const addMessage =await contract.sendMessage(address, msg);
       setLoading(true);
       await addMessage.wait();
       setLoading(false);
@@ -106,7 +107,8 @@ export const AppProvider = ({ children }) => {
       window.location.reload();
 
     } catch (error) {
-      setError("error while creating account, please reload");
+      setError("bhosda");
+      console.log(error);
     }
   };
 

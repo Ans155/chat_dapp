@@ -94,7 +94,7 @@ contract ChatApp{
         else return keccak256(abi.encodePacked(pubkey2,pubkey1));
     }
 
-    function sendMessage(address friend_key, string calldata _msg) external{
+    function sendMessage(address friend_key,string calldata _msg) external{
         require(checkUserExists(msg.sender), "Create an account first");
         require(checkUserExists(friend_key), "User is not registered");
         require(checkAlreadyFriends(msg.sender, friend_key), "You are not friends");
