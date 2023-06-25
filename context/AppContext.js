@@ -107,7 +107,7 @@ export const AppProvider = ({ children }) => {
       window.location.reload();
 
     } catch (error) {
-      setError("bhosda");
+      setError("Please reload");
       console.log(error);
     }
   };

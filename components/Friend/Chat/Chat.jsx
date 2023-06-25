@@ -21,10 +21,10 @@ const Chat = ({sendMessage, readMessage, friendMsg, account, userName, Loading, 
     <div className={Style.Chat}>
         {currentUserAddress && currentUserName ? (
             <div className={Style.Chat_user_info}>
-                <Image src={images.accountName} alt="img" width={70} height={70} />
+                <Image src={images.accountName} alt="img" width={40} height={40} />
                 <div className={Style.Chat_user_info_box}>
-                    <h4>{currentUserName}</h4>
-                    <p className={Style.show}>{currentUserAddress}</p>
+                    <h2>{currentUserName}</h2>
+                    {/* <p className={Style.show}>{currentUserAddress}</p> */}
 
                 </div>
             </div>
@@ -41,7 +41,10 @@ const Chat = ({sendMessage, readMessage, friendMsg, account, userName, Loading, 
                                     <div className={Style.Chat_box_left_title}>
                                         <Image src={images.accountName} alt='image' width={50} height={50} />
                                         <span>
+                                            <span style={{color:"green"}}>
                                             {chatData.name} {""}
+                                            </span>
+                                            
                                             <small>Time: {convertTime(el.timestamp)}</small>
                                         </span>
                                     </div>
@@ -73,7 +76,7 @@ const Chat = ({sendMessage, readMessage, friendMsg, account, userName, Loading, 
                 <div className={Style.Chat_box_send}>
                     <div className={Style.Chat_box_send_img}>
                         <Image src={images.smile} alt='smile' width={30} height={30}/>
-                        <input type='text' placeholder='send your message' onChange={(e)=> setMessage(e.target.value)} />
+                        <input type='text' placeholder='  send your message...' onChange={(e)=> setMessage(e.target.value)} />
                         <Image src={images.file} alt="file" width={30} height={30} />
                                 <>
                                 
