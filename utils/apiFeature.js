@@ -56,19 +56,13 @@ const fetchContract =(signerOrProvider) =>
 
 
  export const convertTime =(time) => {
-    const newTime = new Date(time.toNumber());
-    const realTime =
-        newTime.getHours()+
-        "/"+
-        newTime.getMinutes()+
-        "/"+
-        newTime.getSeconds()+
-        "Date :"+
-        newTime.getDate()+
-        "/"+
-        (newTime.getMonth() +1)+
-        "/"+
-        newTime.getFullYear();
-
-    return realTime;
+    const newTime = new Date(time.toNumber() * 1000); // Multiply by 1000 to convert from seconds to milliseconds
+    const hours = newTime.getHours().toString().padStart(2, '0');
+    const minutes = newTime.getMinutes().toString().padStart(2, '0');
+    const seconds = newTime.getSeconds().toString().padStart(2, '0');
+    const date = newTime.getDate().toString().padStart(2, '0');
+    const month = (newTime.getMonth() + 1).toString().padStart(2, '0'); // Adding 1 since months are zero-based
+    const year = newTime.getFullYear();
+  
+    return `${hours}:${minutes}:${seconds} - ${date}/${month}/${year}`;
  }
