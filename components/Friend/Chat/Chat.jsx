@@ -76,7 +76,7 @@ const Chat = ({sendMessage, readMessage, friendMsg, account, userName, Loading, 
                         <input type='text' placeholder='send your message' onChange={(e)=> setMessage(e.target.value)} />
                         <Image src={images.file} alt="file" width={30} height={30} />
                                 <>
-                                <small>{message} {chatData.address}</small>
+                                
                                 <Image src={images.send} alt="send" width={30} height={30} onClick={() => sendMessage({ msg: message, address: chatData.address})}/>
                                 </>
 

@@ -110,11 +110,8 @@ const Navbar = () => {
         <div className={Style.modelBox}>
           <Model openBox={setOpenModel}
                 title="WELCOME TO"
-                head ="CHAT BUDDY"
-                info="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Asperiores atque, dolorem laudantium dolor sequi necessitatibus 
-                cum voluptatum incidunt nostrum nemo iusto, odio recusandae. 
-                Repellendus, id aperiam? Perspiciatis quia mollitia similique!"
+                head ="CHAT DAPP"
+                info="Register yourself and Connect with your friends on this amazing decentralized chat application, where your data and privacy is more secure than EVER!"
                 smallInfo="kindly select your name..."
                 image={images.hero}
                 functionName={createAccount}

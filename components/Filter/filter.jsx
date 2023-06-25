@@ -37,16 +37,14 @@ const filter = () => {
     {/* {Model component} */}
     {addFriend && (
         <div className={Style.Filter_model}>
-          <Model openBox={addFriend}
+          <Model openBox={setAddFriend}
                 title="WELCOME TO"
                 head ="CHAT BUDDY"
-                info="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Asperiores atque, dolorem laudantium dolor sequi necessitatibus 
-                cum voluptatum incidunt nostrum nemo iusto, odio recusandae. 
-                Repellendus, id aperiam? Perspiciatis quia mollitia similique!"
+                info="Connect with your friends on this amazing decentralized chat application, where your data and privacy is more secure than EVER!!"
                 smallInfo="kindly select your friend's name and address..."
                 image={images.hero}
                 functionName={addFriends}
+                //addFriend={addFriend}
           /> 
           
         </div>
