@@ -25,6 +25,7 @@
 
     }
     .alluser{
+        position: inherit;
         width: 90%;
         grid-template-columns: 1fr;
     }

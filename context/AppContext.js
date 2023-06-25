@@ -49,13 +49,13 @@ export const AppProvider = ({ children }) => {
   }, []);
   
 
-  const readMessage = async () => {
+  const readMessage = async (friendAddress) => {
     try {
       const contract = await connectingWithContract();
       const read = await contract.readMessage(friendAddress);
       setFriendMsg(read);
     } catch (error) {
-      //setError("NO message right now");
+      setError("NO message right now");
     }
   };
 
@@ -95,8 +95,8 @@ export const AppProvider = ({ children }) => {
 
   const sendMessage = async ({msg, address}) => {
     try {
-      console.log(msg);
-      console.log(address);
+      // console.log(msg);
+      // console.log(address);
       const contract = await connectingWithContract();
 
       const addMessage =await contract.sendMessage(address, msg);
